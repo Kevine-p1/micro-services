@@ -18,5 +18,10 @@ export class UsersController {
     findById(@Param('id', ParseIntPipe)id:number){
         return this.usersService.findById(id)
     }
+    @Get('name/:name')
+    @ApiOperation({summary: "Get user by name "})
+    findByName(@Param('name')name:string){
+        return  this.usersService.findByName(name)
+    }
 
 }
